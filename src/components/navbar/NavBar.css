@@ -1,0 +1,46 @@
+.up {
+  bottom: 120px;
+  position: relative;
+}
+
+.mixed {
+  height: 80px;
+}
+
+
+
+.navbar {
+  margin: 0px;
+  padding: 0px;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+    /* background-color: #e8e4d9; */
+
+  
+}
+
+.contain{
+    background-color: #e8e4d9;
+      margin-bottom: 0px;
+
+
+}
+.container-fluid {
+  background-color: #e8e4d9;
+  margin: 0px;
+  padding: 0px;
+}
+
+.navbar-brand {
+margin-right: -20px; /* réduit la marge droite du logo */
+}
+
+.nb-1 {
+margin-right: -10px; /* réduit la marge droite des boutons */
+}
+
+.navbar-toggler {
+margin-left: -10px; /* réduit la marge gauche du bouton burger */
+}
