@@ -32,17 +32,17 @@ const NavBar = () => {
         <div className={`collapse navbar-collapse ${navBar ? 'show' : ''}`}>
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <NavLink to={'quisommesnous'} className="nav-link">
-                Qui sommes-nous
+              <NavLink to={'qui_sommes_nous?'} className="nav-link">
+                Qui sommes-nous ?
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink to={'nosservices'} className="nav-link">
+              <NavLink to={'nos_services'} className="nav-link">
                 Nos services
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink to={'notreengagement'} className="nav-link">
+              <NavLink to={'notre_engagement'} className="nav-link">
                 Notre engagement
               </NavLink>
             </li>
@@ -53,7 +53,7 @@ const NavBar = () => {
             </li>
             {isConnected ? (
               <li className="nav-item">
-                <NavLink to={'/dashboard'} className="nav-link">
+                <NavLink to={'dashboard'} className="nav-link">
                   Tableau de bord
                 </NavLink>
               </li>
