@@ -29,7 +29,7 @@ const Footer = () => {
                 to="postuler"
                 className="bg-white rounded-lg shadow text-muted navlink"
               >
-                Postuler
+                Postuler maintenant
               </NavLink>
             </li>
           </ul>
