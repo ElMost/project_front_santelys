@@ -1,0 +1,32 @@
+.footer {
+  background-color: #e8e4d9;
+  padding: 0;
+  margin: 0px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+ 
+
+}
+
+.foot {
+  margin: 0px;
+  background-color: #e8e4d9;
+  display: flex;
+  justify-content: space-between;
+}
+
+.navlink {
+  text-decoration: none;
+  font-size: 22px;
+  font-weight: bold;
+  padding: 0 10px;
+  margin-top: 2px;
+}
+
+.copyright {
+  font-size: 14px;
+  padding: 0 10px;
+  padding-top: 2px;
+  background-color: #e8e4d9;
+}

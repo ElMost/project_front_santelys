@@ -1,14 +1,24 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Footer from './components/footer/Footer';
+import Home from './pages/home/Home';
+import NavBar from './components/navbar/NavBar';
+import { About } from './pages/about/About';
+import Devis from './pages/devis/Devis';
+import Login from './components/authentification/login/Login';
 
 function App() {
   return (
     <BrowserRouter>
-        <h1>test</h1>{' '}
+      <NavBar />
       <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/devis" element={<Devis />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
+      <Footer />
     </BrowserRouter>
   );
 }
