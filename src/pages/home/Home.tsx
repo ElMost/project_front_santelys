@@ -1,11 +1,11 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
-import img from '../../assets/aide.jpg';
+// import { NavLink } from 'react-router-dom';
+// import img from '../../assets/aide.jpg';
 import './Home.css';
 
 const Home = () => {
   return (
-    <div className="container1 shadow ">
+    <div className="container1 ">
       <div className="container ">
         <div className="banner">
           <div className="banner-text">
