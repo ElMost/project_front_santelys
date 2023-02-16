@@ -1,18 +1,16 @@
 import React from 'react';
 import img from '../../assets/lis.png';
-import './About.css';
+
 
 export const About = () => {
   return (
     <div className="container-fluid">
       <div className="row">
         <div
-          className="col-6 p-5"
-          style={{ backgroundImage: `url(${img})`, backgroundSize: 'cover' }}
+          className="col-8 p-5 d-flex"
+          // style={{ backgroundImage: `url(${img})`, backgroundSize: 'cover' }}
         >
           <h1 className="text-white text-center pt-5">Qui sommes-nous ?</h1>
-        </div>
-        <div className="col-6 p-5">
           <ul className="w-4/5  ml-5 md:ml-0  md:w-full  mt-10 space-y-4  text-xl text-justify text-[#6D625C]">
             <li className="font-semibold border border-[#6D625C] py-5 px-4 bg-[#F9F7F4] rounded-md">
               ENTREPRISE D'AIDE A DOMICILE FAMILLIALE
@@ -39,6 +37,10 @@ export const About = () => {
             </p>
           </div>
         </div>
+        <div
+          className="col-4 p-5"
+          style={{ backgroundImage: `url(${img})`, backgroundSize: 'cover' }}
+        ></div>
       </div>
     </div>
   );

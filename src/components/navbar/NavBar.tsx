@@ -18,7 +18,7 @@ const NavBar = () => {
           <img src={logo} alt="logo" width={100} height={100} />
         </a>
         <div className="nb-1 me-1 mx-2">
-          <NavLink to="demande" className="btn btn-danger">
+          <NavLink to="/devis" className="btn btn-danger">
             Devis gratuit
           </NavLink>
         </div>
@@ -32,7 +32,7 @@ const NavBar = () => {
         <div className={`collapse navbar-collapse ${navBar ? 'show' : ''}`}>
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <NavLink to={'qui_sommes_nous?'} className="nav-link">
+              <NavLink to={'about'} className="nav-link">
                 Qui sommes-nous ?
               </NavLink>
             </li>
