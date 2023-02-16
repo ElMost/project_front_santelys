@@ -15,7 +15,7 @@ const NavBar = () => {
     <nav className="navbar navbar-expand-lg  shadow contain">
       <div className="container-fluid">
         <a className="navbar-brand" href="/">
-          <img src={logo} alt="logo" width={100} height={100} />
+          <img src={logo} alt="logo" width={80} height={80} />
         </a>
         <div className="nb-1 me-1 mx-2">
           <NavLink to="/devis" className="btn btn-danger">

@@ -411,7 +411,7 @@ const getServiceType = (serviceName: any) => {
 
 
   return (
-    <div className="container">
+    <div className="container-fluid">
       <div className="row">
         <div className="col-md-6">
           <div className="border p-2 mt-5">

@@ -1,6 +1,6 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
-import img from '../../assets/aide.jpg';
+// import { NavLink } from 'react-router-dom';
+// import img from '../../assets/aide.jpg';
 import './Home.css';
 
 const Home = () => {
