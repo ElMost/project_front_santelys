@@ -1,39 +1,31 @@
-/* .up {
-  bottom: 120px;
-  position: relative;
-} */
 
-/* .mixed {
-  height: 80px;
-} */
 
-.navbar {
+/* .navbar {
   margin: 0px;
   padding: 0px;
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 100;
-
-  
-}
+} */
 
 .contain {
   background-color: #e8e4d9;
-  margin-bottom: 0px;
+  /* margin-bottom: 0px;
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 1;
+  z-index: 1; */
 }
 .container-fluid {
-  background-color: #e8e4d9;
   margin: 0px;
   padding: 0px;
+  /* width: 98%; */
 }
 
 .navbar-brand {
-  margin-right: -20px; /* réduit la marge droite du logo */
+  margin: 0 !important;
+  padding: 0 !important;; 
 }
 
 .nb-1 {
@@ -42,4 +34,9 @@
 
 .navbar-toggler {
   margin-left: -10px; /* réduit la marge gauche du bouton burger */
+}
+
+.custom-nav li {
+  width:150px;
+  padding:0px 0px 0px 10px;
 }

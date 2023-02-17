@@ -7,7 +7,7 @@ const Footer = () => {
   return (
     <footer
       className="
-    bg-light rounded-lg shadow footer"
+    bg-light rounded-lg shadow footer "
     >
       <div
         className="
@@ -39,7 +39,7 @@ const Footer = () => {
         </div>
       </div>
       <p className="col-12 mb-0 text-center copyright">
-        © 2021 Santelis. Tous droits réservés.
+        © 2021 Santelys. Tous droits réservés.
       </p>
     </footer>
   );

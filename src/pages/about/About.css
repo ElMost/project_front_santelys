@@ -1,10 +1,52 @@
-
 .bannerAbout {
   background-image: url('../../assets/lis.png');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
   height: 300px;
-    padding: 0 20px;
-
+  padding: 0 20px;
 }
+/* 
+.about__style {
+  margin-top: 37px;
+  width: 80%;
+  margin: 150px auto;
+}
+.card__about__style {
+  margin-top: 37px;
+  display: grid;
+  grid-template-areas:
+    'card1 card1 card1 card4'
+    'card2 card2 card2 card4'
+    'card3 card3 card3 card4';
+  gap: 30px;
+}
+.card {
+  background: #f9f7f4;
+  font-size: 25px;
+  border-radius: 15px;
+  color: #6d615c;
+  border: 0.5px solid #6d615c;
+}
+label {
+  color: #4bf252;
+}
+p:last-child {
+  margin-top: 40px;
+}
+
+.card1 {
+  grid-area: card1;
+  padding: 10px 110px 10px 30px;
+}
+.card2 {
+  grid-area: card2;
+  padding: 10px 110px 10px 30px;
+}
+.card3 {
+  grid-area: card3;
+  padding: 10px 110px 10px 30px;
+}
+.card4 {
+  grid-area: card4;
+} */
