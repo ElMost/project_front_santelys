@@ -1,21 +1,14 @@
 import React, { useState } from 'react';
 import { Form, Button, Row, Col } from 'react-bootstrap';
+import { frequencyData } from '../../data/FrequenceData';
+import { serviceData, serviceDataCheckboxItems } from '../../data/ServiceData';
+import { CheckboxItem } from '../../interfaces/CheckboxItem';
+import { DevisData } from '../../interfaces/DevisData';
 
-interface CheckboxItem {
-  value: string;
-  isChecked: boolean;
-  type: string;
-}
 
-interface DevisData {
-  services: string[];
-  // serviceIDs: number[];
-  serviceTypes: string[];
-  frequency: { frequency: Number }; // frequency is an object with a key of type string and a value of type number;
-}
 
 const Devis = () => {
-const [frequency, setFrequency] = useState({ frequency: 0 });
+const [frequency, setFrequency] = useState(0);
 
   
   
@@ -23,21 +16,10 @@ const [frequency, setFrequency] = useState({ frequency: 0 });
     services: [],
     // serviceIDs: [],
     serviceTypes: [],
-    frequency:frequency,
+    frequency:0
   });
   const [checked, setChecked] = useState<boolean>();
-  const [checkboxItems, setCheckboxItems] = useState<CheckboxItem[]>([
-    { value: 'Entretien au Domicile', isChecked: false, type: 'Domicile' },
-    { value: 'Sortie', isChecked: false, type: 'Domicile' },
-    { value: 'Repassage', isChecked: false, type: 'Domicile' },
-    { value: 'Déplacement au domicile', isChecked: false, type: 'Domicile' },
-    { value: 'Surveillance', isChecked: false, type: 'Domicile' },
-    { value: 'Aide au lever/coucher', isChecked: false, type: 'Autonomie' },
-    { value: 'Préparation des repas', isChecked: false, type: 'Autonomie' },
-    { value: 'aide prise de medicament', isChecked: false, type: 'Autonomie' },
-    { value: 'aide à la prise des repas', isChecked: false, type: 'Autonomie' },
-    { value: 'Garde de jour/nuit', isChecked: false, type: 'Autonomie' },
-  ]);
+  const [checkboxItems, setCheckboxItems] = useState<CheckboxItem[]>(serviceDataCheckboxItems);
 
   const handleCheckboxChange = (index: number) => {
     const newCheckboxItems = [...checkboxItems];
@@ -46,27 +28,9 @@ const [frequency, setFrequency] = useState({ frequency: 0 });
     console.log(newCheckboxItems[index]);
   };
 
-  const serviceData = [
-    // defined serviceData with an array of objects
-    { nom: 'Entretien au Domicile', type: 'Domicile' },
-    { nom: 'Sortie', type: 'Domicile' },
-    { nom: 'Repassage', type: 'Domicile' },
-    { nom: 'Déplacement au domicile', type: 'Domicile' },
-    { nom: 'Surveillance', type: 'Domicile' },
-    { nom: 'Aide au lever/coucher', type: 'Autonomie' },
-    { nom: 'Préparation des repas', type: 'Autonomie' },
-    { nom: 'aide prise de medicament', type: 'Autonomie' },
-    { nom: 'aide à la prise des repas', type: 'Autonomie' },
-    { nom: 'Garde de jour/nuit', type: 'Autonomie' },
-  ];
 
-  const frequencyData = [
-    // defined frequencyData with an array of objects
-    { nom: '1 fois par semaine', value: 1 },
-    { nom: '2  à 5 fois par semaine', value: 2 },
-    { nom: ' Tous les jours de la semaine', value: 3 },
-  ];
- 
+
+
   // const getServiceID = (serviceName: any) => {
   //   const service = serviceData.find((s) => s.nom === serviceName);
   //   return service ? serviceData.indexOf(service) : -1;
@@ -77,13 +41,19 @@ const [frequency, setFrequency] = useState({ frequency: 0 });
     return service ? service.type : 'bug de type';
   };
 
-  const getFrequencyValue = (frequencyName: any) => {
+/*   const getFrequencyValue = (frequencyName: any) => {
     const frequency = frequencyData.find((f) => f.nom === frequencyName);
     return frequency ? frequency.value : -1;
-  };
+  }; */
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+
+
+
+
+
+
+  const handleSubmit = () => {
+
     const services = checkboxItems
       .filter((item) => item.isChecked)
       .map((item) => item.value);
@@ -98,7 +68,8 @@ const [frequency, setFrequency] = useState({ frequency: 0 });
 
     // });
 
-    setData({ services, serviceTypes, frequency: { frequency: 0 } });
+    setData({ services, serviceTypes, frequency: frequency});
+    console.log(frequency)
     setChecked(true);
 
     console.log(data);
@@ -115,7 +86,7 @@ const [frequency, setFrequency] = useState({ frequency: 0 });
               Services <span className="text-success">Santélys</span> souhaités
               :
             </p>
-            <Form onSubmit={handleSubmit}>
+            <Form >
               <Row>
                 {checkboxItems.map((item, index) => (
                   <Col key={index} md={6}>
@@ -129,7 +100,7 @@ const [frequency, setFrequency] = useState({ frequency: 0 });
                 ))}
               </Row>
               <div className="text-center mt-2 mb-5">
-                <Button variant="success" type="submit">
+                <Button variant="success" onClick={() => handleSubmit()}>
                   Valider
                 </Button>
               </div>
@@ -175,7 +146,7 @@ const [frequency, setFrequency] = useState({ frequency: 0 });
                   <li key={index}></li>
                 ))}
               </ul> */}
-              <Form onSubmit={handleSubmit}>
+              <Form >
                 <div className="mt-4">
                   <p className="mt-2 text-lg mb-2 m-0 font-bold  text-dark ">
                     Fréquence des services sélectionnés:
@@ -186,31 +157,31 @@ const [frequency, setFrequency] = useState({ frequency: 0 });
                       label="1 fois par semaine"
                       name="group1"
                       type="radio"
-                      onChange={() => setChecked(true)}
-                      checked={checked === true}
+                      value={frequencyData[0].value}
+                      onChange={() => setFrequency(0) }
                     />
                     <Form.Check
                       inline
                       label="2 à 5 fois par semaine"
                       name="group1"
                       type="radio"
-                      onChange={() => setChecked(false)}
-                      checked={checked === true}
+                      value={frequencyData[1].value}
+                      onChange={() => setFrequency(2)}
                     />
                     <Form.Check
                       inline
                       label="Tous les jours de la semaine"
                       name="group1"
                       type="radio"
-                      onChange={() => setChecked(false)}
-                      checked={checked === true}
+                      value={frequencyData[2].value}
+                      onChange={() => setFrequency(1)}
                     />
                   </div>
                 </div>
                 <div className="d-flex justify-content-center mt-4">
-                  <Button type="submit" variant="primary" onClick={() => {
+                  <Button  variant="primary" onClick={() => {
                     setChecked(true);
-                    console.log(data)
+                    handleSubmit();
                   }}>
                     Envoyer la demande
                   </Button>

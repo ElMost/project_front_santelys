@@ -1,177 +1,101 @@
-// import React, { useState } from 'react';
-// import { NavLink } from 'react-router-dom';
-// import logo from '../../assets/logo.png';
-// import '../navbar/NavBar.css';
+import { useState } from "react";
+import { NavLink } from "react-router-dom";
+import logo from '../../assets/logo.png'
+export default function NavBar() {
+    const [navbar, setNavbar] = useState(false);
+    const [isAuthenticated, setIsAuthenticated] = useState(false);
 
-// const NavBar = () => {
-//   const [navBar, setNavBar] = useState(false);
-//   const [isConnected, setIsConnected] = useState(false);
+    
+    return (
+        <nav className="w-full bg-[#E8E4D9] shadow ">
+            <div className="justify-between  mx-auto lg:items-center lg:flex ">
+                <div>
+                    <div className="flex items-center justify-between py-1 lg:py-5 lg:block">
+                        <a href="" className="relative left-0 ">
+                           <img width={70} height={70} src={logo} />
+                        </a>
+                    
+           
+        
+                        <div className="lg:hidden">
+                            <button
+                                className="p-2 text-gray-700 rounded-lg outline-none focus:border-gray-400 focus:border"
+                                onClick={() => setNavbar(!navbar)}
+                            >
+                                {navbar ? (
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        className="w-6 h-6 text-[#6D625C]"
+                                        viewBox="0 0 20 20"
+                                        fill="currentColor"
+                                    >
+                                        <path
+                                            fillRule="evenodd"
+                                            d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                                            clipRule="evenodd"
+                                        />
+                                    </svg>
+                                ) : (
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        className="w-6 h-6 text-[#6D625C]"
+                                        fill="none"
+                                        viewBox="0 0 24 24"
+                                        stroke="currentColor"
+                                        strokeWidth={2}
+                                    >
+                                        <path
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                            d="M4 6h16M4 12h16M4 18h16"
+                                        />
+                                    </svg>
+                                )}
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div
+                        className={`flex-1 justify-self-center pb-3 mt-8 lg:block lg:pb-0 lg:mt-0 ${
+                            navbar ? "block" : "hidden"
+                        }`}
+                    >
+                        <ul className="pt-2 items-center justify-center space-y- lg:grid grid-cols-6 lg:space-x-6 lg:space-y-0">
+                        <li
+                       className="px-3 py-2  text-white text-center bg-red-500 rounded-lg shadow hover:bg-gray-100">
+                          <NavLink to="demande">Devis Gratuit</NavLink>
+                        </li>
+                      
+                        <NavLink to="quisommesnous"> <li className="text-[#6D625C]  text-center hover:text-2xl lg:rounded-lg  w-40 lg:px-3 lg:py-2  ">
+                           A propos
+                            </li></NavLink>
+                            <NavLink to="nosservices"> <li className="text-[#6D625C]  text-center hover:text-2xl lg:rounded-lg lg:px-3 lg:py-2  ">
+                         Services 
+                            </li></NavLink>
+                            <NavLink to="notreengagement"> <li className="text-[#6D625C]  text-center hover:text-2xl  lg:rounded-lg lg:px-3 lg:py-2  ">
+                         Engagement 
+                            </li></NavLink>
+                            <NavLink to="postuler"> <li className="text-[#6D625C]  text-center hover:text-2xl  lg:rounded-lg lg:px-3 lg:py-2  ">
+                         postuler
+                            </li></NavLink>
+                          { !isAuthenticated ? <NavLink to="login"><li className="text-[#6D625C]  text-center  hover:text-2xl lg:rounded-lg lg:px-3 lg:py-2  ">
+                            Connexion
+                               
+                            </li></NavLink> :    <NavLink to="dashboard"><li className="text-[#6D625C]  text-center  hover:text-2xl lg:rounded-lg lg:px-3 lg:py-2  ">
+                          Tableau de board
+                               
+                            </li></NavLink> }
+                        </ul>
 
-//   const handleLogin = () => {
-//     setIsConnected(!isConnected);
-//   };
-
-//   return (
-//     <nav className="navbar navbar-expand-lg  fixed-top shadow contain">
-//       <div className="container-fluid">
-//         <a className="navbar-brand" href="/">
-//           <img src={logo} alt="logo" width={100} height={100} />
-//         </a>
-//         <div className="nb-1 me-1 mx-2">
-//           <NavLink to="/devis" className="btn btn-danger">
-//             Devis gratuit
-//           </NavLink>
-//         </div>
-//         <button
-//           className="navbar-toggler me-3"
-//           type="button"
-//           onClick={() => setNavBar(!navBar)}
-//         >
-//           <span className="navbar-toggler-icon"></span>
-//         </button>
-//         <div className={`collapse navbar-collapse ${navBar ? 'show' : ''}`}>
-//           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-//             <li className="nav-item">
-//               <NavLink to={'about'} className="nav-link">
-//                 Qui sommes-nous ?
-//               </NavLink>
-//             </li>
-//             <li className="nav-item">
-//               <NavLink to={'nos_services'} className="nav-link">
-//                 Nos services
-//               </NavLink>
-//             </li>
-//             <li className="nav-item">
-//               <NavLink to={'notre_engagement'} className="nav-link">
-//                 Notre engagement
-//               </NavLink>
-//             </li>
-//             <li className="nav-item">
-//               <NavLink to={'postuler'} className="nav-link">
-//                 Postuler
-//               </NavLink>
-//             </li>
-//             {isConnected ? (
-//               <li className="nav-item">
-//                 <NavLink to={'dashboard'} className="nav-link">
-//                   Tableau de bord
-//                 </NavLink>
-//               </li>
-//             ) : null}
-//           </ul>
-//           <div className="d-flex ">
-//             {!isConnected ? (
-//               <div className="nb-1 me-2">
-//                 <NavLink to={'/login'} className="btn btn-outline-primary">
-//                   Connexion
-//                 </NavLink>
-//               </div>
-//             ) : null}
-//             {/* <div className="nb-1 me-2">
-//               <NavLink to="demande" className="btn btn-danger">
-//                 Devis gratuit{' '}
-//               </NavLink>
-//             </div> */}
-//           </div>
-//           {isConnected ? (
-//             <button className="btn btn-outline-danger" onClick={handleLogin}>
-//               Déconnexion
-//             </button>
-//           ) : null}
-//         </div>
-//       </div>
-//     </nav>
-//   );
-// };
-
-// export default NavBar;
-
-
-import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
-import logo from '../../assets/logo.png';
-import '../navbar/NavBar.css';
-
-const NavBar = () => {
-  const [navBar, setNavBar] = useState(false);
-  const [isConnected, setIsConnected] = useState(false);
-
-  const handleLogin = () => {
-    setIsConnected(!isConnected);
-  };
-
-  return (
-    <nav className="navbar navbar-expand-lg  fixed-top shadow contain">
-      <div className="container-fluid px-0">
-        <div className="d-flex align-items-center justify-content-between w-100">
-          <a className="navbar-brand" href="/">
-            <img src={logo} alt="logo" width={85} height={85} />
-          </a>
-          <div className="ms-auto me-4">
-            <NavLink to="/devis" className="btn btn-danger">
-              Devis gratuit
-            </NavLink>
-          </div>
-          <button
-            className="navbar-toggler order-3"
-            type="button"
-            onClick={() => setNavBar(!navBar)}
-          >
-            <span className="navbar-toggler-icon"></span>
-          </button>
-        </div>
-        <div className={`collapse navbar-collapse ${navBar ? 'show' : ''}`}>
-         <ul className="navbar-nav ms-auto mb-2 mb-lg-0 custom-nav">
-
-            <li className="nav-item">
-              <NavLink to={'about'} className="nav-link">
-                A propos
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink to={'nos_services'} className="nav-link">
-                Services
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink to={'engagement'} className="nav-link">
-                Engagement
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink to={'postuler'} className="nav-link">
-                Postuler
-              </NavLink>
-            </li>
-            {isConnected ? (
-              <li className="nav-item">
-                <NavLink to={'dashboard'} className="nav-link">
-                  Mes services
-                </NavLink>
-              </li>
-            ) : null}
-          </ul>
-          <div className="d-flex">
-            {!isConnected ? (
-              <div className="nb-1 me-2">
-                <NavLink to={'/login'} className="btn btn-outline-primary">
-                  Connexion
-                </NavLink>
-              </div>
-            ) : null}
-          </div>
-          {isConnected ? (
-            <button
-              className="btn btn-outline-danger me-2"
-              onClick={handleLogin}
-            >
-              Déconnexion
-            </button>
-          ) : null}
-        </div>
-      </div>
-    </nav>
-  );
-};
-
-export default NavBar;
+                
+                    </div>
+                </div>
+                <div className="mb-1 hidden space-x-2 lg:inline-block">
+           
+          
+                </div>
+            </div>
+        </nav>
+    );
+}

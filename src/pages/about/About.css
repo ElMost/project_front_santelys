@@ -6,6 +6,25 @@
   height: 300px;
   padding: 0 20px;
 }
+
+h2 {
+  color :#6D625C !important;
+}
+
+li {
+  border-color:#6D625C !important;
+}
+
+.greenText {
+ color : #00FF00;
+ 
+}
+.borderT {
+ border: 2px;
+ border-color:  red;
+ min-height: 300px;
+}
+
 /* 
 .about__style {
   margin-top: 37px;

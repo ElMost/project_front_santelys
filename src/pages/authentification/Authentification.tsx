@@ -1,17 +1,20 @@
 import Login from "../../components/authentification/login/Login";
+import Signup from "../../components/authentification/signup/Signup";
 
 
 export default function FormulaireAuthentification() {
   return (
-    <div className="h-100 bg-danger mb-0 p-0 md:p-5 md:m-5">
-      <div className="row bg-light shadow-lg rounded-md md:m-5">
+<div>
+<div className=" position-relative d-flex justify-content-center  ">
+      <div className="container row ">
         <div className="col-md-6">
           <Login />
         </div>
         <div className="col-md-6">
-          <Login />
+         <Signup/>
         </div>
       </div>
     </div>
+</div>
   );
 }
