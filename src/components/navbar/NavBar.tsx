@@ -42,7 +42,7 @@ const NavBar = () => {
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink to={'notre_engagement'} className="nav-link">
+              <NavLink to={'engagement'} className="nav-link">
                 Notre engagement
               </NavLink>
             </li>

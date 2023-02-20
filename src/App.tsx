@@ -7,6 +7,7 @@ import NavBar from './components/navbar/NavBar';
 import { About } from './pages/about/About';
 import Devis from './pages/devis/Devis';
 import Login from './components/authentification/login/Login';
+import Engagement from './pages/engagement/Engagement';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/devis" element={<Devis />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/engagement" element={<Engagement />} />
       </Routes>
       <Footer />
     </BrowserRouter>
