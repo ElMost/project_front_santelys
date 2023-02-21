@@ -1,48 +1,26 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import '../footer/Footer.css';
-import logo from '../../assets/logo.png';
 
-const Footer = () => {
+import logo from '../../assets/logo.png';
+function Footer() {
   return (
-    <footer
-      className="
-    bg-light rounded-lg shadow footer"
-    >
-      <div
-        className="
-      row d-flex justify-content-between align-items-center flex-row flex-md-row 
-      foot"
-      >
-        <div className="col-8 text-start text-md-start mb-3 mb-md-0">
-          <ul className="list-unstyled justify-content-center justify-content-md-start mb-0 text-muted">
-            <li>
-              <NavLink
-                to="notreengagement"
-                className="bg-white rounded-lg shadow text-muted navlink"
-              >
-                Nous contacter
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="postuler"
-                className="bg-white rounded-lg shadow text-muted navlink"
-              >
-                Postuler
-              </NavLink>
-            </li>
-          </ul>
-        </div>
-        <div className="col-4  text-end text-md-end">
-          <img src={logo} alt="logo" width={100} height={100} />
-        </div>
+    <footer className="bottom-0 fixed overflow-hidden  w-full    bg-[#E8E4D9] rounded-lg shadow md:px-6 md:py-3  mt-5">
+      <div className="flex sm:items-center justify-between">
+        <ul className=" items-center mb-6 text-sm text-[#6D625C] justify-center sm:mb-0 ">
+    
+          <li>
+            <NavLink to="contact">Nous contacter </NavLink>
+          </li>
+          <li>
+            <NavLink to="postuler">postuler</NavLink>
+          </li>
+        </ul>
+
+            <img src={logo} alt="logo santélys"  width={90}/>
+      
       </div>
-      <p className="col-12 mb-0 text-center copyright">
-        © 2021 Santelis. Tous droits réservés.
-      </p>
     </footer>
   );
-};
+}
 
 export default Footer;

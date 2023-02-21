@@ -1,0 +1,45 @@
+.engagementBanner {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  padding: 0 ;
+   position: relative;
+  overflow: hidden;
+    /* height: 200px; */
+}
+
+.engagement{
+    background-color: #e8e4d9;
+    margin: 0px auto 150px;
+    width: 92%;
+    padding: 10px;
+    font-size: larger;
+}
+
+.ulEngagement{
+    justify-content: space-evenly;
+
+}
+ /* .banner {
+  height: 400px;
+  position: relative;
+  overflow: hidden;
+} */
+
+/* .engagementBanner img {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  animation: slide 10s infinite;
+} */
+
+/* @keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+} */

@@ -5,53 +5,43 @@ import './About.css';
 
 export const About = () => {
   return (
-    <div className="container-fluide">
-      <div className="bannerAbout">
-        <div className="banner-text">
-          <h1 className="text-left text-xs-center text-md-start mb-4  h1">
-            Qui sommes-nous ?
-          </h1>
+    <div className=''>
+      <p className="w-full md:mt-0 md:ml-0 ml-10 text-3xl font-bold text-[#6D625C]">
+        Qui sommes-nous
+        <br />
+      </p>
+
+      <div className=" grid grid-cols-1 md:grid-cols-2 space-x-10 h-full bg-red p-0 mb-0     ">
+        <div>
+          <div className="w-4/5 h-10/12  md:w-full ml-5 md:ml-0 mb-20 md:mb-0 space-y-20 font-semibold border border-[#6D625C] py-5 px-4 bg-[#F9F7F4] rounded-md h-5/6 mt-10   text-xl text-justify text-[#6D625C]">
+            <p>
+              <span className=" text-[#00FF00]">Santélys.</span> est résolument
+              engagé dans une démarche de qualité et ne cesse d'améliorer son
+              offre pour répondre aux besoins de tous.
+            </p>
+
+            <p>
+              <span className=" text-[#00FF00] ">Santélys.</span> se distingue
+              par ses valeurs de proximité et de personnalisation de l'offre de
+              service.
+            </p>
+          </div>
         </div>
-      </div>
-      {/* <div className="row col-12"> */}
-      <div
-        className="class=col-md-5 col-md-offset-2 d-flex  "
-        // style={{ backgroundImage: `url(${img})`, backgroundSize: 'cover' }}
-      >
-        {/* <h1 className="text-center pt-5">Qui sommes-nous ?</h1> */}
-        {/* <div className=" col-12 p-3 d-flex"> */}
-        <ul className="col-6 w-4/5  ml-5 md:ml-0  md:w-full  mt-10 space-y-4  text-xl text-justify text-[#6D625C] ">
-          <li className="font-semibold border border-[#6D625C] py-5 px-4 bg-[#F9F7F4] rounded-md">
-            ENTREPRISE D'AIDE A DOMICILE FAMILLIALE
-          </li>
-          <li className="font-semibold border border-[#6D625C] py-5 px-4 bg-[#F9F7F4] rounded-md">
-            DANS LE SECTEUR 95
-          </li>
-          <li className="font-semibold border border-[#6D625C] py-5 px-4 bg-[#F9F7F4] rounded-md">
-            ACTIVITES PRESTATAIRES
-          </li>
-        </ul>
-        <div className=" col-6 w-4/5  md:w-full ml-5 md:ml-0 mb-20 md:mb-0 space-y-20 font-semibold border border-[#6D625C] py-5 px-4 bg-[#F9F7F4] rounded-md h-5/6 mt-10   text-xl text-justify text-[#6D625C]">
+
+        <div className="w-4/5 h-10/12 md:w-full ml-5 md:ml-0 mb-20 md:mb-0 space-y-20 font-semibold border border-[#6D625C] py-5 px-4 bg-[#F9F7F4] rounded-md h-5/6 mt-10   text-xl text-justify text-[#6D625C]">
           <p>
-            <span className=" text-[#00FF00]">Santélys</span>
-            est résolument engagé dans une démarche de qualité et ne cesse
-            d'améliorer son offre de services pour répondre au mieux aux besoins
-            de tous.
+            <span className=" text-[#00FF00]">Santélys.</span> est résolument
+            engagé dans une démarche de qualité et ne cesse d'améliorer son
+            offre pour répondre aux besoins de tous.
           </p>
+
           <p>
-            <span className=" text-[#00FF00] ">Santélys</span>
-            se distingue par ses valeurs de proximité, de disponibilité et de
-            réactivité. Nous sommes à votre écoute et nous vous accompagnons
-            dans la gestion de votre quotidien.
+            <span className=" text-[#00FF00] ">Santélys.</span> se distingue par
+            ses valeurs de proximité et de personnalisation de l'offre de
+            service.
           </p>
         </div>
       </div>
-      {/* </div> */}
-      {/* <div
-          className="col-4 p-5"
-          style={{ backgroundImage: `url(${img})`, backgroundSize: 'cover' }}
-        ></div> */}
-      {/* </div> */}
     </div>
   );
 };
